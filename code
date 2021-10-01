@@ -1,0 +1,14 @@
+SECONDS_IN_HOUR = 3600
+SECONDS_IN_MINUTE = 60
+sec = input()
+try:
+    sec = int(sec)
+    hour = sec//SECONDS_IN_HOUR
+    min = (sec - SECONDS_IN_HOUR*hour)//SECONDS_IN_MINUTE
+    seconds = sec - SECONDS_IN_HOUR*hour - SECONDS_IN_MINUTE*min
+    if hour < 10:
+        hour = str(hour)
+        hour = "0"+hour
+    print("Your time in seconds = {seconds}, your time in standart format = {hours}:{minute}:{second}".format(seconds=sec, hours=hour, minute=min, second=seconds))
+except ValueError:
+    print("You wrote incorrect data")
